@@ -2,6 +2,7 @@ import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 import About from "@/components/about";
 import Projects from "@/components/Projects";
+import Price from "@/components/Price";
 
 export default function Home() {
   return (
@@ -21,6 +22,10 @@ export default function Home() {
       {/* Section 3 */}
       <section className="w-full h-screen flex flex-col ">
         <Projects />
+      </section>
+      {/* Section 4 */}
+      <section className="w-full h-screen flex flex-col ">
+        <Price />
       </section>
     </main>
   );
