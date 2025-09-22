@@ -22,7 +22,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`p-2 bg-white hover:shadow-lg  hover:dark:shadow-none flex flex-col rounded-lg  ${
+      className={`p-2 bg-white shadow-[var(--shadow-elevation)]  hover:scale-110 duration-200 ease-in-out flex flex-col rounded-lg  ${
         className || ""
       }`}
     >

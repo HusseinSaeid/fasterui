@@ -12,7 +12,7 @@ export default function NavBar({ className }: NavBarProps) {
         </div>
         <h1 className="text-2xl font-bold ">FasterUI</h1>
       </div>
-      <nav className=" bg-white/60 border border-white rounded-[20px] box-border px-8 gap-12 py-4  md:flex items-center justify-between hidden ">
+      <nav className=" bg-white/60 border shadow-[var(--shadow-elevation)] border-white rounded-[20px] box-border px-8 gap-12 py-4  md:flex items-center justify-between hidden ">
         <h1 className=" ">Home</h1>
         <h1 className=" ">About</h1>
         <h1 className=" ">How It Works</h1>
