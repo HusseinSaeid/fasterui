@@ -39,7 +39,7 @@ export default function About() {
           content={contentText}
           imgSrc="/commerce.png"
           height={200}
-          width={240}
+          width={500}
           className="row-span-2"
           icon={<ShoppingCart size={32} className="text-black" />}
         />

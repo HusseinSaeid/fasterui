@@ -44,8 +44,8 @@ export default function Card({
           <Image
             src={imgSrc}
             alt={title}
-            width={width || 720}
-            height={height || 100}
+            width={width || 820}
+            height={height || 500}
             className=""
           />
         </div>

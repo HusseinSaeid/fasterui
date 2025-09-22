@@ -1,11 +1,8 @@
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
-import { number } from "motion";
 import { useState, useRef, useId, useEffect } from "react";
 
 interface SlideData {
-  title: string;
-  button: string;
   src: string;
 }
 
@@ -63,47 +60,31 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     event.currentTarget.style.opacity = "1";
   };
 
-  const { src, button, title } = slide;
+  const { src } = slide;
 
   return (
-    <div className="[perspective:1200px] [transform-style:preserve-3d]">
+    <div className="[perspective:1200px] ">
       <li
         ref={slideRef}
         className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 "
         onClick={() => handleSlideClick(index)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        style={{
-          transform:
-            current !== index
-              ? "scale(0.98) rotateX(8deg)"
-              : "scale(1) rotateX(0deg)",
-          transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-          transformOrigin: "bottom",
-        }}
       >
-        <div
-          className="absolute top-0 left-0 w-full h-full bg-[#1D1F2F] rounded-[1%] overflow-hidden transition-all duration-150 ease-out"
-          style={{
-            transform:
-              current === index
-                ? "translate3d(calc(var(--x) / 30), calc(var(--y) / 30), 0)"
-                : "none",
-          }}
-        >
+        <div className="absolute top-0 left-0 w-full h-full bg-white shadow-[var(--shadow-elevation)] rounded-[1%] overflow-hidden transition-all duration-150 ease-out">
           <img
-            className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
+            className="absolute inset-0 w-[120%] h-[100%] object-cover opacity-100 transition-opacity duration-600 ease-in-out p-4"
             style={{
               opacity: current === index ? 1 : 0.5,
             }}
-            alt={title}
+            alt="project preview"
             src={src}
             onLoad={imageLoaded}
             loading="eager"
             decoding="sync"
           />
           {current === index && (
-            <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />
+            <div className="absolute inset-0 transition-all duration-1000" />
           )}
         </div>
 
@@ -145,11 +126,15 @@ const CarouselControl = ({
 
 interface CarouselProps {
   slides: SlideData[];
+  current: number;
+  setCurrent: (index: number) => void;
 }
 
-export default function Carousel({ slides }: CarouselProps) {
-  const [current, setCurrent] = useState(1);
-
+export default function Carousel({
+  slides,
+  current,
+  setCurrent,
+}: CarouselProps) {
   const handlePreviousClick = () => {
     const previous = current - 1;
     setCurrent(previous < 0 ? slides.length - 1 : previous);
@@ -189,20 +174,6 @@ export default function Carousel({ slides }: CarouselProps) {
           />
         ))}
       </ul>
-
-      <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
-        <CarouselControl
-          type="previous"
-          title="Go to previous slide"
-          handleClick={handlePreviousClick}
-        />
-
-        <CarouselControl
-          type="next"
-          title="Go to next slide"
-          handleClick={handleNextClick}
-        />
-      </div>
     </div>
   );
 }
