@@ -18,19 +18,29 @@ export default function About() {
 
       <div className="grid grid-cols-4 grid-rows-2 gap-10 mt-10 max-w-7xl p-8">
         <Card
-          icon={<SquareCode size={32} className="text-black" />}
+          icon={<SquareCode size={32} className="text-black dark:text-white" />}
           title="Web Design"
           content={contentText}
         />
         <Card
           title="UI/UX Design"
           content={contentText}
-          icon={<MonitorSmartphone size={32} className="text-black" />}
+          icon={
+            <MonitorSmartphone
+              size={32}
+              className="text-black dark:text-white"
+            />
+          }
         />
         <Card
           title="Responsive Design"
           content={contentText}
-          icon={<TabletSmartphone size={32} className="text-black" />}
+          icon={
+            <TabletSmartphone
+              size={32}
+              className="text-black dark:text-white"
+            />
+          }
         />
 
         {/* الكارت الرابع بالطول */}
@@ -41,7 +51,9 @@ export default function About() {
           height={200}
           width={500}
           className="row-span-2"
-          icon={<ShoppingCart size={32} className="text-black" />}
+          icon={
+            <ShoppingCart size={32} className="text-black dark:text-white" />
+          }
         />
 
         {/* الكارت الخامس بالعرض */}
@@ -51,14 +63,16 @@ export default function About() {
           imgSrc="/webflow.png"
           className="col-span-2 flex flex-row"
           icon={
-            <h1 className="font-raleway text-4xl font-bold text-black">W</h1>
+            <h1 className="font-raleway text-4xl font-bold text-black dark:text-white">
+              W
+            </h1>
           }
         />
 
         <Card
           title="Custom Development"
           content={contentText}
-          icon={<Settings2 size={32} className="text-black" />}
+          icon={<Settings2 size={32} className="text-black dark:text-white" />}
         />
       </div>
     </div>

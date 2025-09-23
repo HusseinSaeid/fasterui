@@ -31,11 +31,11 @@ export default function Projects() {
 
   return (
     <div className="w-full">
-      <div className="mt-12">
+      <div className="">
         <div className="flex flex-row justify-center gap-8 md:gap-16">
           <button
             onClick={handlePreviousClick}
-            className="bg-white rounded-xl shadow-[var(--shadow-elevation)] cursor-pointer flex justify-center items-center p-1 focus:outline outline-blue-500"
+            className="bg-white dark:bg-black rounded-xl shadow-[var(--shadow-elevation)] cursor-pointer flex justify-center items-center p-1 focus:outline outline-blue-500"
           >
             <ArrowLeft size={32} />
           </button>
@@ -44,7 +44,7 @@ export default function Projects() {
           </h1>
           <button
             onClick={handleNextClick}
-            className="bg-white rounded-xl shadow-[var(--shadow-elevation)] cursor-pointer flex justify-center items-center p-1 focus:outline outline-blue-500"
+            className="bg-white dark:bg-black rounded-xl shadow-[var(--shadow-elevation)] cursor-pointer flex justify-center items-center p-1 focus:outline outline-blue-500"
           >
             <ArrowRight size={32} />
           </button>

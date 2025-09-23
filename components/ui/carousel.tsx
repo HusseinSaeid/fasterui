@@ -71,7 +71,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="absolute top-0 left-0 w-full h-full bg-white shadow-[var(--shadow-elevation)] rounded-[1%] overflow-hidden transition-all duration-150 ease-out">
+        <div className="absolute top-0 left-0 w-full h-full hover:scale-110 bg-white dark:bg-black shadow-[var(--shadow-elevation)] rounded-lg overflow-hidden transition-all duration-150 ease-out">
           <img
             className="absolute inset-0 w-[120%] h-[100%] object-cover opacity-100 transition-opacity duration-600 ease-in-out p-4"
             style={{
@@ -105,24 +105,6 @@ interface CarouselControlProps {
   title: string;
   handleClick: () => void;
 }
-
-const CarouselControl = ({
-  type,
-  title,
-  handleClick,
-}: CarouselControlProps) => {
-  return (
-    <button
-      className={`w-10 h-10 flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-xl focus:border-blue-700 focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
-        type === "previous" ? "rotate-180" : ""
-      }`}
-      title={title}
-      onClick={handleClick}
-    >
-      <IconArrowNarrowRight className="text-neutral-600 dark:text-neutral-200" />
-    </button>
-  );
-};
 
 interface CarouselProps {
   slides: SlideData[];

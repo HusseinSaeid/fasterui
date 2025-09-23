@@ -18,8 +18,8 @@ export default function DarkModeToggle({ className }: DarkModeToggleProps) {
       title="Toggle theme"
       aria-label="Toggle theme"
       className="flex items-center justify-center w-15 h-10 rounded-[20px] box-border
-        bg-white/70 dark:bg-[#191919]/80 backdrop-blur-md text-gray-800 dark:text-gray-200
-        hover:scale-110 hover:shadow-md active:scale-95
+        bg-white/60 dark:bg-black/60 backdrop-blur-md text-gray-800 dark:text-gray-200
+        hover:scale-110     shadow-[var(--shadow-elevation)]   active:scale-95
         transition-all duration-300 ease-in-out cursor-pointer"
     >
       <AnimatePresence mode="wait">

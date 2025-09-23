@@ -46,7 +46,7 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: #101522;
   --foreground: oklch(0.985 0 0);
   --card-bg: #1a1a1a;
   --border-color: #374151;
@@ -81,6 +81,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --shadow-elevation: rgba(0, 0, 0, 0.6) 0px 4px 8px,
+    rgba(0, 0, 0, 0.4) 0px 2px 4px;
 }
 
 @theme inline {
