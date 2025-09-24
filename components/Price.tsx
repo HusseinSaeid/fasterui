@@ -15,7 +15,7 @@ export default function Price() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       {/* Main Grid Section */}
-      <div className="grid lg:grid-cols-2 grid-flow-row auto-rows-min gap-10 max-w-6xl w-full px-4">
+      <div className="grid lg:grid-cols-2 grid-flow-row auto-rows-min gap-10 max-w-6xl w-full ">
         {/* Section Title */}
         <div className="p-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug font-raleway text-black dark:text-white mb-6 text-center md:text-left">
