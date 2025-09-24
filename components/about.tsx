@@ -16,31 +16,21 @@ export default function About() {
         What We Do
       </h1>
 
-      <div className="grid grid-cols-4 grid-rows-2 gap-10 mt-10 max-w-7xl p-8">
+      <div className=" grid lg:grid-cols-4 lg:grid-rows-2 gap-10 mt-10 max-w-7xl p-8">
         <Card
-          icon={<SquareCode size={32} className="text-black dark:text-white" />}
+          icon={<SquareCode className="text-black dark:text-white" />}
           title="Web Design"
           content={contentText}
         />
         <Card
           title="UI/UX Design"
           content={contentText}
-          icon={
-            <MonitorSmartphone
-              size={32}
-              className="text-black dark:text-white"
-            />
-          }
+          icon={<MonitorSmartphone className="text-black dark:text-white" />}
         />
         <Card
           title="Responsive Design"
           content={contentText}
-          icon={
-            <TabletSmartphone
-              size={32}
-              className="text-black dark:text-white"
-            />
-          }
+          icon={<TabletSmartphone className="text-black dark:text-white" />}
         />
 
         {/* الكارت الرابع بالطول */}
@@ -50,9 +40,9 @@ export default function About() {
           imgSrc="/commerce.png"
           height={200}
           width={500}
-          className="row-span-2"
+          className="lg:row-span-2"
           icon={
-            <ShoppingCart size={32} className="text-black dark:text-white" />
+            <ShoppingCart className="text-black dark:text-white text-4xl" />
           }
         />
 
@@ -61,9 +51,9 @@ export default function About() {
           title="Webflow"
           content={contentText}
           imgSrc="/webflow.png"
-          className="col-span-2 flex flex-row"
+          className="lg:col-span-2 flex flex-row"
           icon={
-            <h1 className="font-raleway text-4xl font-bold text-black dark:text-white">
+            <h1 className="font-raleway text-2xl font-bold text-black dark:text-white">
               W
             </h1>
           }
@@ -72,7 +62,7 @@ export default function About() {
         <Card
           title="Custom Development"
           content={contentText}
-          icon={<Settings2 size={32} className="text-black dark:text-white" />}
+          icon={<Settings2 className="text-black dark:text-white " />}
         />
       </div>
     </div>

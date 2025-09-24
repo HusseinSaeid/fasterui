@@ -1,7 +1,7 @@
 "use client";
 
 import Carousel from "./ui/carousel";
-import { useState, useId } from "react";
+import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 export default function Projects() {
   const [current, setCurrent] = useState(1);
@@ -27,24 +27,22 @@ export default function Projects() {
     setCurrent(next === slideData.length ? 0 : next);
   };
 
-  const id = useId();
-
   return (
     <div className="w-full">
       <div className="">
         <div className="flex flex-row justify-center gap-8 md:gap-16">
           <button
             onClick={handlePreviousClick}
-            className="bg-white dark:bg-black rounded-xl shadow-[var(--shadow-elevation)] cursor-pointer flex justify-center items-center p-1 focus:outline outline-blue-500"
+            className="hidden  bg-white dark:bg-black rounded-xl shadow-[var(--shadow-elevation)] cursor-pointer lg:flex justify-center items-center p-1 focus:outline outline-blue-500"
           >
             <ArrowLeft size={32} />
           </button>
-          <h1 className="text-7xl font-bold text-center font-raleway">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center font-raleway">
             Check Our Work
           </h1>
           <button
             onClick={handleNextClick}
-            className="bg-white dark:bg-black rounded-xl shadow-[var(--shadow-elevation)] cursor-pointer flex justify-center items-center p-1 focus:outline outline-blue-500"
+            className="hidden bg-white dark:bg-black rounded-xl shadow-[var(--shadow-elevation)] cursor-pointer lg:flex justify-center items-center p-1 focus:outline outline-blue-500"
           >
             <ArrowRight size={32} />
           </button>

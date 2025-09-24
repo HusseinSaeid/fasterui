@@ -8,8 +8,8 @@ import {
 export default function Questions() {
   return (
     <div className=" flex items-center justify-center mt-10 mb-10 ">
-      <div className="grid grid-cols-2 grid-rows-1 gap-10  max-w-6xl w-full px-4">
-        <h1 className="text-black dark:text-white text-7xl font-bold font-raleway">
+      <div className="grid  lg:grid-cols-2 grid-rows-1 gap-10  max-w-6xl w-full px-4">
+        <h1 className="text-black dark:text-white text-4xl text-center lg:text-left sm:text-5xl md:text-6xl lg:text-7xl  font-bold font-raleway">
           Frequently <br /> Asked <br /> Questions
         </h1>
         <div>

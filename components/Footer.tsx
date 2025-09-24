@@ -20,7 +20,7 @@ export default function Footer() {
       </div>
 
       {/* البطاقة المثلجة المركزية */}
-      <div className="w-[90%] p-10 flex flex-row justify-between md:w-[70%] lg:w-[60%] xl:w-[50%] bg-white/60 dark:bg-black/60 shadow-[var(--shadow-elevation)] rounded-xl">
+      <div className="w-[90%] p-10 flex flex-col lg:flex-row justify-between md:w-[70%] lg:w-[60%] xl:w-[50%] bg-white/60 dark:bg-black/60 shadow-[var(--shadow-elevation)] rounded-xl">
         <div className="flex flex-col gap-10">
           <div className="flex flex-row gap-2 items-center">
             <div className="bg-black dark:bg-white flex items-center justify-center rounded-lg p-2">
@@ -35,7 +35,7 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <div className="flex flex-row mt-10 gap-4">
+          <div className="lg:flex flex-row mt-10 gap-4 hidden ">
             <h2>Home</h2>
             <h2>About</h2>
             <h2>How it Works</h2>

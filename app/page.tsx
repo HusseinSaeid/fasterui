@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="w-full h-screen  overflow-y-scroll overflow-x-hidden scroll-smoth ">
+    <main className="w-full h-screen  overflow-y-scroll overflow-x-hidden scroll-smooth ">
       {/* Section 1 */}
       <section className="w-full h-[100vh] flex flex-col ">
         <NavBar />
@@ -17,9 +17,15 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-col gap-40 ">
-        <About />
-        <Projects />
-        <Price />
+        <section id="services">
+          <About />
+        </section>
+        <section id="work">
+          <Projects />
+        </section>
+        <section id="price">
+          <Price />
+        </section>
         <Questions />
         <Footer />
       </section>

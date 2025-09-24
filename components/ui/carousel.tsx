@@ -1,5 +1,4 @@
 "use client";
-import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useRef, useId, useEffect } from "react";
 
 interface SlideData {
@@ -100,12 +99,6 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   );
 };
 
-interface CarouselControlProps {
-  type: string;
-  title: string;
-  handleClick: () => void;
-}
-
 interface CarouselProps {
   slides: SlideData[];
   current: number;
@@ -117,6 +110,9 @@ export default function Carousel({
   current,
   setCurrent,
 }: CarouselProps) {
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
+
   const handlePreviousClick = () => {
     const previous = current - 1;
     setCurrent(previous < 0 ? slides.length - 1 : previous);
@@ -133,12 +129,44 @@ export default function Carousel({
     }
   };
 
+  // swipe handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+
+    const distance = touchStartX - touchEndX;
+    const threshold = 50; // المسافة المطلوبة عشان يتحسب swipe
+
+    if (distance > threshold) {
+      // سحب لليسار -> السلايد اللي بعده
+      handleNextClick();
+    }
+
+    if (distance < -threshold) {
+      // سحب لليمين -> السلايد اللي قبله
+      handlePreviousClick();
+    }
+
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
+
   const id = useId();
 
   return (
     <div
       className="relative w-[70vmin] h-[70vmin] mx-auto"
       aria-labelledby={`carousel-heading-${id}`}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <ul
         className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
