@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="w-full h-screen  overflow-y-scroll overflow-x-hidden scroll-smooth ">
       {/* Section 1 */}
-      <section className="w-full h-[100vh] flex flex-col ">
+      <section className="w-full h-[100vh] flex flex-col" id="home">
         <NavBar />
         <div className="flex flex-1 justify-center items-center w-full">
           <Hero />
@@ -26,8 +26,10 @@ export default function Home() {
         <section id="price">
           <Price />
         </section>
-        <Questions />
-        <Footer />
+        <section>
+          <Questions />
+          <Footer />
+        </section>
       </section>
     </main>
   );

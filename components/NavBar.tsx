@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+
 import DarkModeToggle from "./DarkModeToggle";
 import { Zap, Menu, X } from "lucide-react";
 
@@ -10,14 +11,12 @@ interface NavBarProps {
 
 export default function NavBar({ className }: NavBarProps) {
   const [open, setOpen] = useState(false);
-
   const links = [
     { href: "#home", label: "Home" },
     { href: "#services", label: "About" },
     { href: "#work", label: "Our Work" },
     { href: "#price", label: "Pricing" },
   ];
-
   return (
     <div className="w-full mt-8 px-4 md:px-24">
       {/* Logo + toggle */}
@@ -31,11 +30,14 @@ export default function NavBar({ className }: NavBarProps) {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex bg-white/60 dark:bg-black/60 border shadow-[var(--shadow-elevation)] border-white dark:border-black rounded-[20px] box-border px-8 gap-12 py-4 items-center">
-          {links.map((link) => (
+          {links.map((link, index) => (
             <a
               key={link.href}
               href={link.href}
-              className="transition-colors duration-200 hover:text-blue-500"
+              className={`transition-colors duration-200 ease-in-out hover:text-blue-500 
+                ${
+                  index === 0 ? "text-blue-500" : "text-black dark:text-white"
+                } `}
             >
               {link.label}
             </a>

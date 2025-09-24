@@ -7,18 +7,15 @@ import Link from "next/link";
 // المكون الرئيسي للتذييل
 export default function Footer() {
   const phoneNumber = "201021094777"; // بدون +
+  const links = [
+    { href: "#home", label: "Home" },
+    { href: "#services", label: "About" },
+    { href: "#work", label: "Our Work" },
+    { href: "#price", label: "Pricing" },
+  ];
 
   return (
     <footer className="relative w-full overflow-hidden min-h-[500px] flex items-center justify-center bg-background ">
-      {/* العنصر الزخرفي (يفترض أنه SVG) */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 ">
-        {/*
-          هنا يتم تضمين شفرة SVG للعنصر الزخرفي.
-          يمكن استبدال هذا بعنصر SVG أو مكون React SVG.
-          مثال: <DecorativeSVGComponent className="w-[300px] h-[300px]" />
-        */}
-      </div>
-
       {/* البطاقة المثلجة المركزية */}
       <div className="w-[90%] p-10 flex flex-col lg:flex-row justify-between md:w-[70%] lg:w-[60%] xl:w-[50%] bg-white/60 dark:bg-black/60 shadow-[var(--shadow-elevation)] rounded-xl">
         <div className="flex flex-col gap-10">
@@ -34,15 +31,21 @@ export default function Footer() {
             vision to life.
           </p>
         </div>
-        <div>
-          <div className="lg:flex flex-row mt-10 gap-4 hidden ">
-            <h2>Home</h2>
-            <h2>About</h2>
-            <h2>How it Works</h2>
-            <h2>Services</h2>
+        <div className="flex flex-col justify-between">
+          <div className="lg:flex flex-row mt-4 gap-4 hidden ">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="transition-colors duration-200 hover:text-blue-500"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
           <div className="flex flex-row justify-center items-center gap-6">
             <Link
+              aria-label="Linkedin"
               target="_blank"
               href="https://www.linkedin.com/in/hussein-elsaeid-445032238/"
               className="bg-[#F5F8FF] dark:bg-[#111827] hover:scale-110 h-12 w-12 flex justify-center items-center rounded-lg mt-4"
@@ -50,6 +53,7 @@ export default function Footer() {
               <Linkedin />
             </Link>
             <Link
+              aria-label="Githup"
               target="_blank"
               href="https://github.com/HusseinSaeid"
               className="bg-[#F5F8FF] dark:bg-[#111827] hover:scale-110 h-12 w-12 flex justify-center items-center rounded-lg mt-4"
@@ -57,6 +61,7 @@ export default function Footer() {
               <Github />
             </Link>
             <Link
+              aria-label="WhatsApp"
               href={`https://wa.me/${phoneNumber}`}
               target="_blank"
               className="bg-[#F5F8FF] dark:bg-[#111827] hover:scale-110 h-12 w-12 flex justify-center items-center rounded-lg mt-4"

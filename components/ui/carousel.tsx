@@ -62,40 +62,39 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const { src } = slide;
 
   return (
-    <div className="[perspective:1200px] ">
-      <li
-        ref={slideRef}
-        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 "
-        onClick={() => handleSlideClick(index)}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className="absolute top-0 left-0 w-full h-full hover:scale-110 bg-white dark:bg-black shadow-[var(--shadow-elevation)] rounded-lg overflow-hidden transition-all duration-150 ease-out">
-          <img
-            className="absolute inset-0 w-[120%] h-[100%] object-cover opacity-100 transition-opacity duration-600 ease-in-out p-4"
-            style={{
-              opacity: current === index ? 1 : 0.5,
-            }}
-            alt="project preview"
-            src={src}
-            onLoad={imageLoaded}
-            loading="eager"
-            decoding="sync"
-          />
-          {current === index && (
-            <div className="absolute inset-0 transition-all duration-1000" />
-          )}
-        </div>
+    <li
+      ref={slideRef}
+      className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 [perspective:1200px]"
+      onClick={() => handleSlideClick(index)}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      aria-label={`Slide ${index + 1}`}
+    >
+      <div className="absolute top-0 left-0 w-full h-full hover:scale-110 bg-white dark:bg-black shadow-[var(--shadow-elevation)] rounded-lg overflow-hidden transition-all duration-150 ease-out">
+        <img
+          className="absolute inset-0 w-[120%] h-[100%] object-cover opacity-100 transition-opacity duration-600 ease-in-out p-4"
+          style={{
+            opacity: current === index ? 1 : 0.5,
+          }}
+          alt={`Project preview ${index + 1}`}
+          src={src}
+          onLoad={imageLoaded}
+          loading="eager"
+          decoding="sync"
+        />
+        {current === index && (
+          <div className="absolute inset-0 transition-all duration-1000" />
+        )}
+      </div>
 
-        <article
-          className={`relative p-[4vmin] transition-opacity duration-1000 ease-in-out ${
-            current === index ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
-        >
-          <div className="flex justify-center"></div>
-        </article>
-      </li>
-    </div>
+      <article
+        className={`relative p-[4vmin] transition-opacity duration-1000 ease-in-out ${
+          current === index ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
+        <div className="flex justify-center"></div>
+      </article>
+    </li>
   );
 };
 
@@ -142,15 +141,13 @@ export default function Carousel({
     if (!touchStartX || !touchEndX) return;
 
     const distance = touchStartX - touchEndX;
-    const threshold = 50; // المسافة المطلوبة عشان يتحسب swipe
+    const threshold = 50;
 
     if (distance > threshold) {
-      // سحب لليسار -> السلايد اللي بعده
       handleNextClick();
     }
 
     if (distance < -threshold) {
-      // سحب لليمين -> السلايد اللي قبله
       handlePreviousClick();
     }
 
@@ -168,6 +165,10 @@ export default function Carousel({
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
+      <h2 id={`carousel-heading-${id}`} className="sr-only">
+        Project Carousel
+      </h2>
+
       <ul
         className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
         style={{

@@ -32,15 +32,17 @@ export default function Projects() {
       <div className="">
         <div className="flex flex-row justify-center gap-8 md:gap-16">
           <button
+            aria-label="Previous slide"
             onClick={handlePreviousClick}
             className="hidden  bg-white dark:bg-black rounded-xl shadow-[var(--shadow-elevation)] cursor-pointer lg:flex justify-center items-center p-1 focus:outline outline-blue-500"
           >
             <ArrowLeft size={32} />
           </button>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center font-raleway">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center font-raleway">
             Check Our Work
-          </h1>
+          </h2>
           <button
+            aria-label="Next slide"
             onClick={handleNextClick}
             className="hidden bg-white dark:bg-black rounded-xl shadow-[var(--shadow-elevation)] cursor-pointer lg:flex justify-center items-center p-1 focus:outline outline-blue-500"
           >
