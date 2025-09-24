@@ -16,14 +16,14 @@ export default function Home() {
           <Hero />
         </div>
       </section>
-      <section className="flex flex-col gap-40 ">
+      <section className="flex flex-col gap-40  ">
         <section id="services">
           <About />
         </section>
-        <section id="work">
+        <section id="work" className="p-12">
           <Projects />
         </section>
-        <section id="price">
+        <section id="price" className="p-12">
           <Price />
         </section>
         <section>
