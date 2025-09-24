@@ -13,7 +13,7 @@ const features = [
 
 export default function Price() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center">
       {/* Main Grid Section */}
       <div className="grid md:grid-cols-2 grid-flow-row auto-rows-min gap-10 max-w-6xl w-full px-4">
         {/* Section Title */}
