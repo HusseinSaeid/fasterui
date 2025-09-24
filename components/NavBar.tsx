@@ -22,7 +22,10 @@ export default function NavBar({ className }: NavBarProps) {
       {/* Logo + toggle */}
       <div className="flex items-center justify-between">
         <div className="flex flex-row gap-2 items-center">
-          <div className="bg-black dark:bg-white flex items-center justify-center rounded-lg p-2">
+          <div
+            className="bg-black dark:bg-white flex items-center justify-center rounded-lg p-2"
+            aria-hidden="true"
+          >
             <Zap className="w-4 h-4 text-white dark:text-black" />
           </div>
           <h1 className="text-2xl font-bold">FasterUI</h1>
