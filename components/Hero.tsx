@@ -1,6 +1,9 @@
 export default function Hero() {
   return (
-    <div className="flex flex-col justify-center items-center text-center min-h-[calc(100vh-4rem)] pt-16 px-4">
+    <div
+      className="flex flex-col justify-center items-center text-center px-4"
+      style={{ minHeight: "calc(100vh - 4rem)" }} // 4rem = ارتفاع NavBar
+    >
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-snug font-raleway">
         Awesome UI <br /> Dark Template for <br /> Webflow Agency
       </h1>
