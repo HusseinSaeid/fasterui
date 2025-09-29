@@ -8,29 +8,35 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="w-full h-screen  overflow-y-scroll overflow-x-hidden scroll-smooth ">
-      {/* Section 1 */}
-      <section className="w-full h-[100vh] flex flex-col" id="home">
+    <main className="w-full overflow-x-hidden scroll-smooth">
+      {/* Hero Section */}
+      <section id="home" className="flex flex-col min-h-[calc(100vh-4rem)]">
         <NavBar />
-        <div className="flex flex-1 justify-center items-center w-full">
+        <div className="flex flex-1 justify-center items-center w-full px-4">
           <Hero />
         </div>
       </section>
-      <section className="flex flex-col gap-40  ">
-        <section id="services">
-          <About />
-        </section>
-        <section id="work" className="p-12">
-          <Projects />
-        </section>
-        <section id="price" className="p-12">
-          <Price />
-        </section>
-        <section>
-          <Questions />
-          <Footer />
-        </section>
+
+      {/* About Section */}
+      <section id="services" className="py-20 max-w-7xl mx-auto px-4">
+        <About />
       </section>
+
+      {/* Projects Section */}
+      <section id="work" className="py-20 max-w-7xl mx-auto px-4">
+        <Projects />
+      </section>
+
+      {/* Pricing Section */}
+      <section id="price" className="py-20 max-w-7xl mx-auto px-4">
+        <Price />
+      </section>
+
+      {/* Questions + Footer */}
+      <section className="py-20 max-w-7xl mx-auto px-4">
+        <Questions />
+      </section>
+      <Footer />
     </main>
   );
 }
