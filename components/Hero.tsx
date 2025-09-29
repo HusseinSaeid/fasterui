@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="flex flex-col justify-center items-center px-4 text-center">
+    <div className="flex flex-col justify-center items-center text-center flex-1 px-4">
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-snug font-raleway">
         Awesome UI <br /> Dark Template for <br /> Webflow Agency
       </h1>
