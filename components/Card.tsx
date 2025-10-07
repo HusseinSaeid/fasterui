@@ -35,7 +35,7 @@ export default function Card({
             {title}
           </h2>
         </div>
-        <p className="text-[#8987A1] dark:text-[#C0BFE0] mt-auto ">{content}</p>
+        <p className="text-black dark:text-[#C0BFE0] mt-auto ">{content}</p>
       </div>
 
       {imgSrc && (

@@ -49,8 +49,8 @@ export default function Projects() {
             <ArrowRight size={32} />
           </button>
         </div>
-        <p className="text-center mt-4">
-          Take a look at some of our recent projects to see how we have helped{" "}
+        <p className="text-center mt-4 text-black dark:text-white">
+          Take a look at some of our recent projects to see how we have helped
           <br /> businesses like yours succeed online
         </p>
       </div>

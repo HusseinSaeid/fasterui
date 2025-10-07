@@ -27,7 +27,7 @@ export default function NavBar({ className }: NavBarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
+      setScrolled(window.scrollY > 200);
 
       const scrollPos = window.scrollY + window.innerHeight / 3;
 
@@ -83,9 +83,9 @@ export default function NavBar({ className }: NavBarProps) {
             <a
               key={link.href}
               href={link.href}
-              className={`transition-colors duration-200 ease-in-out hover:text-blue-500 ${
+              className={`transition-colors duration-200 ease-in-out hover:text-blue-600 hover:dark:text-blue-400 ${
                 activeSection === link.href
-                  ? "text-blue-500 font-semibold"
+                  ? "text-blue-700 dark:text-blue-500 font-semibold"
                   : "text-black dark:text-white"
               }`}
             >

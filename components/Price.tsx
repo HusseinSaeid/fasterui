@@ -21,7 +21,7 @@ export default function Price() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug font-raleway text-black dark:text-white mb-6 text-center md:text-left">
             Pricing
           </h1>
-          <p className="text-[#8987A1] dark:text-[#C0BFE0] leading-relaxed text-center md:text-left">
+          <p className="text-black dark:text-white leading-relaxed text-center md:text-left">
             Take a look at some of our recent projects <br />
             to see how we have helped businesses <br /> like yours succeed
             online.
@@ -33,7 +33,7 @@ export default function Price() {
           <h2 className="font-raleway text-black dark:text-white font-bold text-3xl mb-4">
             Unlimited Services
           </h2>
-          <p className="text-[#8987A1] dark:text-[#C0BFE0] mb-6">
+          <p className="text-black dark:text-white mb-6">
             Take a look at some of our recent projects to see how <br />
             we have helped businesses like yours succeed online.
           </p>
