@@ -37,7 +37,7 @@ export default function Home() {
         <section className="py-20 max-w-7xl mx-auto px-4">
           <Questions />
         </section>
-        <Footer className="w-full bg-black text-white fixed bottom-0 left-0" />
+        <Footer />
       </div>
     </main>
   );

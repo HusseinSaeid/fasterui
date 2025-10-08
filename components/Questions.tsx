@@ -7,7 +7,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export default function Questions() {
+type QuestionsProps = {
+  className?: string;
+};
+
+export default function Questions({ className }: QuestionsProps) {
   const faqs = [
     {
       question: "What is the Awesome UI Dark Template by FasterUI?",
@@ -31,7 +35,11 @@ export default function Questions() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center mt-10 mb-10">
+    <div
+      className={`flex flex-col items-center justify-center mt-10 mb-10 ${
+        className || ""
+      }`}
+    >
       <div className="max-w-6xl w-full px-4 grid lg:grid-cols-2 gap-10">
         <h2 className="text-black dark:text-white text-4xl text-center lg:text-left sm:text-5xl md:text-6xl lg:text-7xl font-bold font-raleway">
           Frequently <br /> Asked <br /> Questions
