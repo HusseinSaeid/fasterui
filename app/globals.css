@@ -140,3 +140,24 @@
     @apply bg-background text-foreground;
   }
 }
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--button-bg);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover);
+}
+
+::selection {
+  background-color: var(--button-bg);
+  color: #ffffff;
+}
